@@ -1,7 +1,7 @@
 ﻿Set-Location C:\Users\sam\Downloads
 
-$TwoDaysAgo = (Get-Date).AddDays(-2)
+[int]$MinusDays = 2)
 
-Get-ChildItem -File Q*.ica | Where-Object {$_.LastWriteTime -le $TwoDaysAgo} 
+Get-ChildItem -File Q*.ica | Where-Object {$_.LastWriteTime -le ((Get-Date).AddDays(-$MinusDays))} 
 
 
